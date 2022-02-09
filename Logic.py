@@ -67,18 +67,18 @@ class Logic(object):
 
     def summaryA(self, a, func):
         print(' A | Y')
-        for i in range(2):
+        for i in range(len(a)):
             print( ' ' + str(a[i]) + ' | ' + str(func(a[i])) )
         print('')
 
     def summaryAB(self, a, b, func):
         print(' A | B | Y')
-        for i in range(4):
+        for i in range(len(a)):
             print( ' ' + str(a[i]) + ' | ' + str(b[i]) + ' | ' + str(func(a[i], b[i])) )
         print('')
 
     def summaryABC(self, a, b, c, func):
         print(' A | B | C | Y')
-        for i in range(8):
+        for i in range(len(a)):
             print( ' ' + str(a[i]) + ' | ' + str(b[i]) + ' | ' + str(c[i]) + ' | ' + str(func(a[i], b[i], c[i])) )
         print('')
