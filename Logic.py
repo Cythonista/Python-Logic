@@ -6,8 +6,24 @@ class Logic(object):
             y = 0
         return y
 
+    def TAND(self, a, b, c):
+        # 3入力 1出力 AND
+        if(bool(a) and bool(b) and bool(c)):
+            y = 1
+        else:
+            y = 0
+        return y
+
     def OR(self, a, b):
         if(bool(a) or bool(b)):
+            y = 1
+        else:
+            y = 0
+        return y
+
+    def TOR(self, a, b, c):
+        # 3入力 1出力 OR
+        if(bool(a) or bool(b) or bool(c)):
             y = 1
         else:
             y = 0
@@ -48,3 +64,21 @@ class Logic(object):
         y = self.XOR(a,b)
         y = self.NOT(y)
         return y
+
+    def summaryA(self, a, func):
+        print(' A | Y')
+        for i in range(2):
+            print( ' ' + str(a[i]) + ' | ' + str(func(a[i])) )
+        print('')
+
+    def summaryAB(self, a, b, func):
+        print(' A | B | Y')
+        for i in range(4):
+            print( ' ' + str(a[i]) + ' | ' + str(b[i]) + ' | ' + str(func(a[i], b[i])) )
+        print('')
+
+    def summaryABC(self, a, b, c, func):
+        print(' A | B | C | Y')
+        for i in range(8):
+            print( ' ' + str(a[i]) + ' | ' + str(b[i]) + ' | ' + str(c[i]) + ' | ' + str(func(a[i], b[i], c[i])) )
+        print('')

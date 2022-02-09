@@ -2,33 +2,28 @@ from Logic import Logic
 
 def main():
     logic = Logic()
-    
-    a = 0
-    b = 1
 
-    y = logic.AND(a, b)
-    print(y)
+    # 1入力 1出力
+    a = [0, 1]
+    logic.summaryA(a, logic.NOT)
+    logic.summaryA(a, logic.SNAND)
 
-    y = logic.OR(a, b)
-    print(y)
+    # 2入力 1出力
+    a = [0, 0, 1, 1]
+    b = [0, 1, 0, 1]
+    logic.summaryAB(a, b, logic.AND)
+    logic.summaryAB(a, b, logic.OR)
+    logic.summaryAB(a, b, logic.NAND)
+    logic.summaryAB(a, b, logic.NOR)
+    logic.summaryAB(a, b, logic.XOR)
+    logic.summaryAB(a, b, logic.XNOR)
 
-    y = logic.NOT(a)
-    print(y)
-
-    y = logic.NAND(a, b)
-    print(y)
-
-    y = logic.SNAND(a)
-    print(y)
-
-    y = logic.NOR(a, b)
-    print(y)
-
-    y = logic.XOR(a, b)
-    print(y)
-
-    y = logic.XNOR(a, b)
-    print(y)
+    # 3入力 1出力
+    a = [0 ,0, 0, 0, 1, 1, 1, 1]
+    b = [0 ,0, 1, 1, 0, 0, 1, 1]
+    c = [0 ,1, 0, 1, 0, 1, 0, 1]
+    logic.summaryABC(a, b, c, logic.TAND)
+    logic.summaryABC(a, b, c, logic.TOR)
 
 
 if __name__ == '__main__':
